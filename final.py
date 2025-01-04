@@ -19,7 +19,7 @@ note = [
     ('Имя пользователя:', username),
     ('Заголовок:', [title, title2, title3]),
     ('Описание:', content),
-    ('Статус:', status),
+    ('Статус:', (f'Активность: {status}, Для заголовка: {title, title2, title3}')),
     ('Дата создания:', ['День:', created_date, 'Месяц', created_month]),
     ('Дата дедлайна:', ['День:', issue_date, 'Месяц', issue_month])
 ]
