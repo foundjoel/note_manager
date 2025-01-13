@@ -15,7 +15,7 @@ class Note:
     content = input('Введите описание заметки:')
     print('Описание заметки:', content)
     
-    def main():
+    def main(self):
         current_status = "в процессе"
         print(f"Текущий статус заметки: {current_status}")
         possible_statuses = ["выполнено", "в процессе", "отложено"]
