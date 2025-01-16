@@ -35,3 +35,15 @@ print('Дата заметки:', f'День: {created_date}, Месяц: {creat
 issue_date = int(input('Введите дату дедлайна:'))
 issue_month = int(input('Введите месяц заметки:'))
 print('Дедлайн:', f'День: {issue_date}, Месяц: {issue_month}')
+
+note = [
+    ('Имя пользователя:', username),
+    ('Заголовок:', [title]),
+    ('Описание:', content),
+    ('Статус:', current_status),
+    ('Дата создания:', ['День:', created_date, 'Месяц:', created_month]),
+    ('Дата дедлайна:', ['День:', issue_date, 'Месяц:', issue_month])
+]
+print('\nИнформация о заметке: ' )
+for index, about_note in enumerate(note, start=1):
+    print(f"{index}. {about_note}")
