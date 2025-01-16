@@ -66,11 +66,7 @@ while True:
                     print(f"Произошла непредвиденная ошибка: {str(e)}")
                     print("Пожалуйста, попробуйте снова.")
 
-            all_notes.append({'Имя: ': user_name})
-            all_notes.append({'Ваши заголовки: ': titles})
-            all_notes.append({'Описание: ': add_content})
-            all_notes.append({'Статус: ': current_status})
-            all_notes.append({'До дедлайна осталось: ': days_difference})
+            all_notes.append({'Имя: ': user_name, 'Ваши заголовки: ': titles, 'Описание: ': add_content, 'Статус: ': current_status, 'До дедлайна осталось: ': days_difference})
             print('\nСписок заметок: ')
             for note in all_notes:
                 print(note)
