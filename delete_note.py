@@ -18,7 +18,9 @@ if not notes:
 else:
     print('\nВаши заметки: ')
     for index, note in enumerate(notes, start=1):
-        print(f'{index}. {note}')
+        print(f"{index}. Имя: {note['name: ']}")
+        print(f" Имя: {note['title: ']}")
+        print(f" Имя: {note['content: ']}")
 
 select_delete = input('Вы можете удалить заметку по имени и заголовку. Напишите слово-ключ: ')
 print(select_delete)
