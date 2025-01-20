@@ -7,7 +7,7 @@ all_notes = []
 current_date = datetime.now().date()
 print('Сегодняшняя дата:', current_date.strftime("%d-%m-%Y"))
 
-
+#Функция поиска заметок
 def show_notes(all_notes):
     if not all_notes:
         print("Нет доступных заметок.")
@@ -21,6 +21,7 @@ def show_notes(all_notes):
         print(f" Статус: {title['status']}")
         print(f" До дедлайна осталось: {title['issue_date']}")
 
+#Функция создания заметок
 def create_notes(all_notes):
     show_notes(all_notes)
     while True:
@@ -100,6 +101,7 @@ def create_notes(all_notes):
             print('Неверный ввод, попробуйте ещё раз.')
             continue
 
+#Функция обновления заметок
 def update_notes(all_notes):
     show_notes(all_notes)
 
@@ -122,7 +124,7 @@ def update_notes(all_notes):
     else:
         print('Ошибка. Номера заметки не существует')
 
-
+#Функция удаления заметок
 def del_notes(all_notes):
     if not all_notes:
         print('Список пуст.')
@@ -144,7 +146,7 @@ def del_notes(all_notes):
         all_notes[:] = updated_notes
         print('Заметки удалены.')
 
-
+#Функция поиска заметок
 def search_notes(all_notes):
     while True:
         user_input = input('Введите ключевое слово: ')
@@ -169,7 +171,7 @@ def search_notes(all_notes):
             print('Нет найденных заметок.')
         break
 
-
+#Основной блок меню с выбором функций
 while True:
     print(f"\nВыбор меню:"
           f"\nСоздать заметку (1)"
