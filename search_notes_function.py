@@ -9,7 +9,6 @@ print('Сегодняшняя дата:', current_date.strftime("%d-%m-%Y"))
 
 #Функция создания заметок.
 def create_notes(all_notes):
-    show_notes(all_notes)
     while True:
         user_add_note = input('Хотите добавить новую заметку? Да или нет. ')
         if user_add_note.lower() == 'да':
