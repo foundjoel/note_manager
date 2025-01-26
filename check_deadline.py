@@ -1,4 +1,8 @@
 from datetime import datetime
+
+current_date = datetime.now().date()
+print('Сегодняшняя дата:', current_date.strftime("%d-%m-%Y"))
+
 while True:
     try:
         deadline_str = input("Введите дату дедлайна в формате дд-мм-гггг: ")
