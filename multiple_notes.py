@@ -1,5 +1,4 @@
 from datetime import datetime
-all_notes = []
 while True:
 
     print('Добро пожаловать в менеджер заметок! Вы можете добавить новую заметку.')
@@ -8,12 +7,12 @@ while True:
     current_date = datetime.now().date()
     print('Сегодняшняя дата:', current_date.strftime("%d-%m-%Y"))
 
-    add_notes = []
+    all_notes = []
+
     while True:
         user_add_note = input('Хотите добавить новую заметку? Да или нет. ')
         if user_add_note.lower() == 'да':
 
-            names = []
             user_name = input('Введите имя: ' )
             print('Имя: ', user_name)
 
@@ -27,11 +26,9 @@ while True:
             for idx, title in enumerate(titles, start=1):
                 print(f"{idx}. {title}")
 
-            content = []
             add_content = input('Введите описание заметки: ' )
             print('Описание заметки: ', add_content)
 
-            statuses = []
             current_status = 'В процессе'
             print(f'Текущий статус заметки: {current_status}')
             possible_statuses = ['выполнено', 'в процессе', 'отложено']
@@ -45,7 +42,6 @@ while True:
                     print('Некорректный статус. Пожалуйста, выберите один из доступных статусов.')
             print(f'\nОбновлённый статус заметки: {current_status}')
 
-            from datetime import datetime
             while True:
                 try:
                     deadline_str = input("Введите дату дедлайна в формате дд-мм-гггг: ")
@@ -66,15 +62,16 @@ while True:
                     print(f"Произошла непредвиденная ошибка: {str(e)}")
                     print("Пожалуйста, попробуйте снова.")
 
-            all_notes.append({'Имя: ': user_name, 'Ваши заголовки: ': titles, 'Описание: ': add_content, 'Статус: ': current_status, 'До дедлайна осталось: ': days_difference})
-            print('\nСписок заметок: ')
-            for note in all_notes:
-                print(note)
+            all_notes.append({f"\nИмя: ": user_name,
+                              f"\nВаши заголовки: ": titles,
+                              f"\nОписание: ": add_content,
+                              f"\nСтатус: ": current_status,
+                              f"\nДо дедлайна осталось: ": days_difference})
 
         elif user_add_note.lower() == 'нет':
             print('\nВаши заметки: ')
             for note in all_notes:
-                print(f"> {note}")
+                print(f" {note}")
             quit('Конец программы.')
         else:
             print('Неверный ввод, попробйуте ещё раз.')
