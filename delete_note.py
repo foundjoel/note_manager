@@ -19,20 +19,20 @@ else:
     print('\nВаши заметки: ')
     for index, note in enumerate(notes, start=1):
         print(f"{index}. Имя: {note['name: ']}")
-        print(f" Имя: {note['title: ']}")
-        print(f" Имя: {note['content: ']}")
+        print(f" Заголовок: {note['title: ']}")
+        print(f" Описание: {note['content: ']}")
 
 select_delete = input('Вы можете удалить заметку по имени и заголовку. Напишите слово-ключ: ')
 print(select_delete)
 
 updated_notes = []
 
-for notes in notes:
-    if notes['name: '] != select_delete and notes['title: '] != select_delete:
-        updated_notes.append(notes)
+for note in notes[:]:
+    if note['name: '] != select_delete and note['title: '] != select_delete:
+        updated_notes.append(note)
         print('Не найдено.')
         break
-    elif notes['name: '] == select_delete and notes['title: '] == select_delete:
+    elif note['name: '] == select_delete and note['title: '] == select_delete:
         del notes
 
 if not updated_notes:
@@ -41,5 +41,5 @@ else:
     print('\nОстались следующие заметки: ')
     for index, note in enumerate(updated_notes, start=1):
         print(f"{index}. Имя: {note['name: ']}")
-        print(f" Имя: {note['title: ']}")
-        print(f" Имя: {note['content: ']}")
+        print(f" Заголовок: {note['title: ']}")
+        print(f" Описание: {note['content: ']}")
